@@ -113,7 +113,7 @@ def test_predefined_examples(parser):
             "he drinks a knife"
         ],
         "No aceptadas por la gramática (2 ejemplos)": [
-            "she eats",  # Falta objeto
+            "eats she",  # Falta objeto
             "eats she cake"  # Orden incorrecto
         ]
     }

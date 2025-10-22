@@ -37,11 +37,24 @@ def test_basic():
     print("\n" + "-"*70)
     
     test_sentences = [
+        # Oraciones válidas con verbo + objeto
         ("she eats a cake", True),
         ("the dog drinks the beer", True),
         ("the fork eats the oven", True),
-        ("she eats", False),
-        ("eats she cake", False),
+        
+        # Oraciones válidas con solo verbo
+        ("she eats", True),
+        ("he drinks", True),
+        
+        # Oraciones válidas con preposiciones
+        ("she eats with a fork", True),
+        ("the dog drinks in the oven", True),
+        
+        # Oraciones inválidas
+        ("eats she cake", False),  # Orden incorrecto
+        ("she the cake", False),   # Falta verbo
+        ("drinks dog", False),     # Falta determinante
+        ("she eats the", False),   # Falta sustantivo después de determinante
     ]
     
     for sentence, expected in test_sentences:
